@@ -3,16 +3,15 @@
     <div class="row">
       <div class="col-md-4">
         <img class="footer-logo" src="{{asset('site/imgs/logo.png')}}">
-        <p class="footer-text">بنك الدم هذا النص هو مثال لنص يمكن ان يستبدل فى نفس المساحه, لقد تم توليد هذا النص من مولد النص العربى حيث يمكنك توليد مثل هذا النص أو العديد من النصوص الاخرى إضافة الى زيادة عدد الحروف التى يولدها التطبيق يطلع على صوره حقيقية للتصميم</p>
+        <p class="footer-text">{{settings()->about_app}}</p>
       </div>
       <div class="col-md-4">
         <ul class="footer-list">
-          <a href="#"><li> الرئيسيه</li></a>
-            <a href="#"><li> عن بنك الدم </li></a>
-            <a href="#"> <li> المقالات </li></a>
-            <a href="#"><li> طلبات التبرع </li></a>
-            <a href="#"> <li> من نحن </li></a>
-            <a href="#">  <li> اتصل بنا </li></a>
+          <a href="{{route('homepage')}}"><li> الرئيسيه</li></a>
+            <a href="{{route('allarticles')}}"> <li> المقالات </li></a>
+            <a href="{{route('donations')}}"><li> طلبات التبرع </li></a>
+            <a href="{{route('how_we_are')}}"> <li> من نحن </li></a>
+            <a href="{{route('setting')}}">  <li> اتصل بنا </li></a>
 
         </ul>
         </div>
@@ -32,10 +31,11 @@
 <div class="row">
 <div class="col-md-4">
   <div class="social-media">
- <i class="fab fa-facebook-f hvr-float"></i>
-    <i class="fab fa-instagram hvr-float"></i>
-    <i class="fab fa-twitter hvr-float"></i>
-    <i class="fab fa-whatsapp hvr-float"></i>
+    <a href="{{settings()->fb_link}}" target="_blank"><i class="fab fa-facebook-f hvr-float" style="color: #3a549f;"></i></a>
+    <a href="{{settings()->ins_link}}" target="_blank"><i class="fab fa-instagram hvr-float" style="color: #e01fe0;"></i></a>
+    <a href="{{settings()->tw_link}}" target="_blank"><i class="fab fa-twitter hvr-float" style="color: #4faaf0;"></i></a>
+    <a href="{{settings()->whats_link}}" target="_blank"><i class="fab fa-whatsapp hvr-float" style="color: #27d850;"></i></a>
+
 
  </div>
 

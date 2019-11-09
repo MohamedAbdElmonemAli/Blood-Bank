@@ -9,6 +9,16 @@
       return response()->json($response);
     }
 
+    function settings(){
+    $settings = App\Models\Setting::find(1);
+
+    if ($settings){
+        return $settings;
+    }else{
+        return new App\Models\Setting;
+    }
+}
+
     function notifyByFirebase($title,$body,$tokens,$data = [])        // paramete 5 =>>>> $type
     {
     // https://gist.github.com/rolinger/d6500d65128db95f004041c2b636753a

@@ -16,7 +16,7 @@
    <link rel=stylesheet href="{{asset('site/css/owl.theme.default.min.css')}}">
    <link rel="stylesheet" href="{{asset('site/css/hover-min.css')}}">
        <link rel="stylesheet" href="{{asset('site/css/style.css')}}">
-       
+
      <!-- custom font -->
     <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
 
@@ -35,10 +35,10 @@
           </div>
           <div class="col-md-4">
            <div class="social-media">
-              <i class="fab fa-facebook-f"></i>
-              <i class="fab fa-instagram"></i>
-              <i class="fab fa-twitter"></i>
-              <i class="fab fa-whatsapp"></i>
+             <a href="{{settings()->fb_link}}" target="_blank"><i class="fab fa-facebook-f hvr-float" style="color: #3a549f;"></i></a>
+             <a href="{{settings()->ins_link}}" target="_blank"><i class="fab fa-instagram hvr-float" style="color: #e01fe0;"></i></a>
+             <a href="{{settings()->tw_link}}" target="_blank"><i class="fab fa-twitter hvr-float" style="color: #4faaf0;"></i></a>
+             <a href="{{settings()->whats_link}}" target="_blank"><i class="fab fa-whatsapp hvr-float" style="color: #27d850;"></i></a>
 
            </div>
 
@@ -46,9 +46,9 @@
           <div class="col-md-6">
               <div class="contact">
                   @auth('client')
-                  <p class="email"> {{auth()->guard('client')->user()->email}}</p>
+                  <p class="email"> {{settings()->email}}</p>
                   <i class="fas fa-envelope-square email "></i>
-                  <p class="phone">   {{auth()->guard('client')->user()->phone}}</p>
+                  <p class="phone">   {{settings()->phone}}</p>
                   <i class="fas fa-phone-volume phone hvr-buzz"></i>
                   <a href="{{route('logoutsite')}}"><button class="btn login-btn btn-sm col-md-1">خروج</button></a>
                   @else
